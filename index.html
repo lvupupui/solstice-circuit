@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solstice Circuit</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="hud" aria-label="Game status">
+      <div>
+        <p class="eyebrow">Solstice Circuit</p>
+        <h1>Light the ring before the longest day ends.</h1>
+      </div>
+      <div class="stats">
+        <div>
+          <span>Level</span>
+          <strong id="level-value">1</strong>
+        </div>
+        <div>
+          <span>Daylight</span>
+          <strong id="light-value">72</strong>
+        </div>
+        <div>
+          <span>Turn</span>
+          <strong id="turn-value">1</strong>
+        </div>
+        <button id="reset-button" type="button">Reset</button>
+        <button id="demo-button" type="button">Demo</button>
+      </div>
+    </section>
+
+    <section class="recording-title" aria-label="Recording title card">
+      <p>Solstice Circuit</p>
+      <h2>A puzzle game about spending the longest day wisely.</h2>
+    </section>
+
+    <section class="play-area">
+      <canvas id="game" width="960" height="640" aria-label="Solstice Circuit game board"></canvas>
+      <aside class="panel" aria-live="polite">
+        <h2 id="status-title">The sun is high.</h2>
+        <p id="status-copy">Charge the dawn cipher before dusk. Step into shadow to recover daylight.</p>
+        <div class="progress" aria-label="Obelisk progress">
+          <span>Cipher bits</span>
+          <strong id="progress-value">0 / 3</strong>
+        </div>
+        <div class="legend">
+          <div><span class="swatch player"></span>Seeker</div>
+          <div><span class="swatch stone"></span>Cipher obelisk</div>
+          <div><span class="swatch shadow"></span>Shadow well</div>
+          <div><span class="swatch gate"></span>Solstice ring</div>
+        </div>
+        <div class="panel-actions">
+          <button class="hint-button" id="hint-button" type="button">Hint</button>
+          <button class="hint-button" id="demo-panel-button" type="button">Demo</button>
+        </div>
+        <div class="controls">
+          <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+          <span>or arrow keys</span>
+        </div>
+        <div class="touch-controls" aria-label="Touch controls">
+          <button type="button" data-move="0,-1">Up</button>
+          <button type="button" data-move="-1,0">Left</button>
+          <button type="button" data-move="1,0">Right</button>
+          <button type="button" data-move="0,1">Down</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="./game.js"></script>
+</body>
+</html>
